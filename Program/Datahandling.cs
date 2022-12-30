@@ -28,7 +28,6 @@ using System.Windows.Controls;
 
 namespace DDD
 {
-
     /// <summary>
     /// Datahandling
     /// </summary>
@@ -227,29 +226,30 @@ namespace DDD
         public virtual bool CheckFileInitialized()
         {
             FileInfo fileInfo = new FileInfo(DataPath);
-            if (fileInfo.Exists)
-            {
-                try
+            if (!Directory.Exists(DataPath))
+                if (fileInfo.Exists)
                 {
-                    using (FileStream fs = new FileStream(DataPath, FileMode.OpenOrCreate, FileAccess.ReadWrite))
+                    try
                     {
-                        using (BinaryReader br = new BinaryReader(fs))
+                        using (FileStream fs = new FileStream(DataPath, FileMode.OpenOrCreate, FileAccess.ReadWrite))
                         {
-                            br.BaseStream.Seek(0, SeekOrigin.Begin);
-                            if (br.ReadInt32() == -1) return false;
-                            else return true;
+                            using (BinaryReader br = new BinaryReader(fs))
+                            {
+                                br.BaseStream.Seek(0, SeekOrigin.Begin);
+                                if (br.ReadInt32() == -1) return false;
+                                else return true;
+                            }
                         }
                     }
+                    catch (Exception e)
+                    {
+                        Console.WriteLine("Error = {0}", e.Source);
+                        Console.WriteLine("Error = {0}", e.Message);
+                        Console.WriteLine("Error = {0}", e.StackTrace);
+                        return false;
+                    }
                 }
-                catch (Exception e)
-                {
-                    Console.WriteLine("Error = {0}", e.Source);
-                    Console.WriteLine("Error = {0}", e.Message);
-                    Console.WriteLine("Error = {0}", e.StackTrace);
-                    return false;
-                }
-            }
-            return false;
+                return false;
         }
         #endregion
         #region class library
@@ -6952,6 +6952,9 @@ namespace DDD
         /// <returns>Random coordinates</returns>
         public DatahandlingWPF.Win32Point GetRandomCoordinatesFromScore(int score, ValueMultiplicator valueMultiplicator)
         {
+#if DEBUG
+            double debug_scoreDegreeRandom = 0, debug_scoreRadiusRandom = 0;
+#endif
             var win32Point = new DatahandlingWPF.Win32Point();
             try
             {
@@ -6997,8 +7000,11 @@ namespace DDD
             
                 scoreRadiusRandom = RandomDouble(scoreRadius.ParaRadius[scoreRadiusPara, 0],
                     scoreRadius.ParaRadius[scoreRadiusPara, 1]);
-
-                if (scoreDegreeRandom == 0)
+#if DEBUG
+                debug_scoreDegreeRandom = scoreDegreeRandom;
+                debug_scoreRadiusRandom = scoreRadiusRandom;
+#endif
+                if (scoreDegreeRandom == 0 || scoreRadiusRandom == 0)
                     win32Point.X = 0;
                 else
                     win32Point.X = (int)(Math.Sin((scoreDegreeRandom * Math.PI) / 180) * scoreRadiusRandom);
@@ -7015,6 +7021,10 @@ namespace DDD
                 Console.WriteLine("Error = {0}", e.Source);
                 Console.WriteLine("Error = {0}", e.Message);
                 Console.WriteLine("Error = {0}", e.StackTrace);
+#if DEBUG
+                Console.WriteLine("ToDebug debugscoreDegreeRandom: {0}", debug_scoreDegreeRandom);
+                Console.WriteLine("ToDebug debugscoreDegreeRandom: {0}", debug_scoreDegreeRandom);
+#endif
                 Console.WriteLine("*********** Select confirm dartboard numbers ***********");
 
                 win32Point.X = 0;
@@ -12331,25 +12341,52 @@ namespace DDD
             });
             Func<double[], int, int> funcGetValueMultiplikator = ((x,y) =>
             {
-                double CountMin = 0, CountMax = x[0], RandomDbl;
-                int Count = 0, CountUBound = x.GetLength(0);
-
-                RandomDbl = Math.Round(BoardParameter.RandomDouble(0, 100), 2);
-                for (int i = 0; i <= CountUBound; i++)
+#if DEBUG
+                double[] debug_x;
+                if (x == null)
                 {
-                    if (RandomDbl >= CountMin && RandomDbl < CountMax)
-                    {
-                        Count = i;
-                        break;
-                    }
-                    if (i < CountUBound)
-                    {
-                        CountMin = CountMin + x[i];
-                        CountMax = CountMax + x[i + 1];
-                    }
+                    Console.WriteLine("ToDebug double[] = null");
+                    debug_x = null;
                 }
-                
-                return Count;
+                else
+                    debug_x = x;
+
+                int debug_y = y;
+#endif
+                try
+                {
+                    double CountMin = 0, CountMax = x[0], RandomDbl;
+                    int Count = 0, CountUBound = x.GetLength(0);
+
+                    RandomDbl = Math.Round(BoardParameter.RandomDouble(0, 100), 2);
+                    for (int i = 0; i <= CountUBound; i++)
+                    {
+                        if (RandomDbl >= CountMin && RandomDbl < CountMax)
+                        {
+                            Count = i;
+                            break;
+                        }
+                        if (i < CountUBound)
+                        {
+                            CountMin = CountMin + x[i];
+                            CountMax = CountMax + x[i + 1];
+                        }
+                    }
+
+                    return Count;
+                }
+                catch (Exception e)
+                {
+                    Console.WriteLine("Error = {0}", e.Source);
+                    Console.WriteLine("Error = {0}", e.Message);
+                    Console.WriteLine("Error = {0}", e.StackTrace);
+#if DEBUG
+                    Console.WriteLine("ToDebug double[] x: {0}", debug_x);
+                    Console.WriteLine("ToDebug int x: {0}", debug_y);
+#endif
+                    return 0;
+                }
+
             });
 
             int Score = new int(), Multiplikator = new int();
@@ -12474,7 +12511,6 @@ namespace DDD
     }
     public class Table
     {
-
         public byte[] BoardValue = new byte[20]
         {
             20,1,18,4,13,6,10,15,2,17,03,19,7,16,8,11,14,09,12,5
