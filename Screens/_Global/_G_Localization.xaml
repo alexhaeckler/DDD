@@ -1,0 +1,151 @@
+﻿<ResourceDictionary 
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:system="clr-namespace:System;assembly=mscorlib">
+
+    <!-- ********** Top menu ********** -->
+    <system:String x:Key="_G_Local_TopMenu_Btn_NewGame">New Game</system:String>
+    <system:String x:Key="_G_Local_TopMenu_Btn_Home">Home</system:String>
+    <system:String x:Key="_G_Local_TopMenu_Btn_Player">Player</system:String>
+    <system:String x:Key="_G_Local_TopMenu_Btn_Options">Options</system:String>
+    <system:String x:Key="_G_Local_TopMenu_Btn_Statistic">Statistic</system:String>
+    <system:String x:Key="_G_Local_TopMenu_Btn_Exit">Exit</system:String>
+    <system:String x:Key="_G_Local_TopMenu_Btn_Cancel">Cancel</system:String>
+    <system:String x:Key="_G_Local_TopMenu_Btn_Save">Save</system:String>
+    
+    <!-- ********** Global Prompt ********** -->
+    <system:String x:Key="_G_Local_Prompt_Btn_OK">OK</system:String>
+    <system:String x:Key="_G_Local_Prompt_Btn_Yes">Yes</system:String>
+    <system:String x:Key="_G_Local_Prompt_Btn_No">No</system:String>
+    <system:String x:Key="_G_Local_Prompt_Btn_Cancel">Cancel</system:String>
+
+    <!-- ********** 001 Overview ********** -->
+    <system:String x:Key="_G_Local_001_Btn_NewGame">New Game</system:String>
+    <system:String x:Key="_G_Local_001_Btn_Statistic">Statistic</system:String>
+    <system:String x:Key="_G_Local_001_Btn_Player">Player</system:String>
+    <system:String x:Key="_G_Local_001_Btn_Options">Options</system:String>
+    <system:String x:Key="_G_Local_001_Btn_Exit">Exit</system:String>
+    <system:String x:Key="_G_Local_001_Btn_PDCRanking">PDC Ranking</system:String>
+    <system:String x:Key="_G_Local_001_Btn_AllTimeRec">All time records</system:String>
+
+    <!-- ********** 020 New game ********** -->
+    <system:String x:Key="_G_Local_020_Txt_Out_Points">Points</system:String>
+    <system:String x:Key="_G_Local_020_Txt_Out_GameMode">Game mode</system:String>
+    <system:String x:Key="_G_Local_020_Txt_Out_KIDifficulty">Bot difficulty</system:String>
+    <system:String x:Key="_G_Local_020_Txt_Out_Val_Points_1">101</system:String>
+    <system:String x:Key="_G_Local_020_Txt_Out_Val_Points_2">301</system:String>
+    <system:String x:Key="_G_Local_020_Txt_Out_Val_Points_3">501</system:String>
+    <system:String x:Key="_G_Local_020_Txt_Out_Val_GameMode_1">Single out</system:String>
+    <system:String x:Key="_G_Local_020_Txt_Out_Val_GameMode_2">Double out</system:String>
+    <system:String x:Key="_G_Local_020_Txt_Out_Val_GameMode_3">Triple out</system:String>
+    <system:String x:Key="_G_Local_020_Txt_Out_Val_BotDifficult_1">Easy</system:String>
+    <system:String x:Key="_G_Local_020_Txt_Out_Val_BotDifficult_2">Medium</system:String>
+    <system:String x:Key="_G_Local_020_Txt_Out_Val_BotDifficult_3">Hard</system:String>
+    <system:String x:Key="_G_Local_020_Txt_Out_NewGame">Lets gooo!</system:String>
+    <system:String x:Key="_G_Local_020_Txt_Out_Sets">Sets to win</system:String>
+    <system:String x:Key="_G_Local_020_Txt_Out_Val_Sets_00">0</system:String>
+    <system:String x:Key="_G_Local_020_Txt_Out_Val_Sets_01">1</system:String>
+    <system:String x:Key="_G_Local_020_Txt_Out_Val_Sets_02">2</system:String>
+    <system:String x:Key="_G_Local_020_Txt_Out_Val_Sets_03">3</system:String>
+    <system:String x:Key="_G_Local_020_Txt_Out_Val_Sets_04">4</system:String>
+    <system:String x:Key="_G_Local_020_Txt_Out_Val_Sets_05">5</system:String>
+    <system:String x:Key="_G_Local_020_Txt_Out_Val_Sets_06">6</system:String>
+    <system:String x:Key="_G_Local_020_Txt_Out_Val_Sets_07">7</system:String>
+    <system:String x:Key="_G_Local_020_Txt_Out_Val_Sets_08">8</system:String>
+    <system:String x:Key="_G_Local_020_Txt_Out_Val_Sets_09">9</system:String>
+    <system:String x:Key="_G_Local_020_Txt_Out_Val_Sets_10">10</system:String>
+    <system:String x:Key="_G_Local_020_Txt_Out_Legs">Legs to win</system:String>
+    <system:String x:Key="_G_Local_020_Txt_Out_Val_Legs_01">1</system:String>
+    <system:String x:Key="_G_Local_020_Txt_Out_Val_Legs_02">2</system:String>
+    <system:String x:Key="_G_Local_020_Txt_Out_Val_Legs_03">3</system:String>
+    <system:String x:Key="_G_Local_020_Txt_Out_Val_Legs_04">4</system:String>
+    <system:String x:Key="_G_Local_020_Txt_Out_Val_Legs_05">5</system:String>
+    <system:String x:Key="_G_Local_020_Txt_Out_Val_Legs_06">6</system:String>
+    <system:String x:Key="_G_Local_020_Txt_Out_Val_Legs_07">7</system:String>
+    <system:String x:Key="_G_Local_020_Txt_Out_Val_Legs_08">8</system:String>
+    <system:String x:Key="_G_Local_020_Txt_Out_Val_Legs_09">9</system:String>
+    <system:String x:Key="_G_Local_020_Txt_Out_Val_Legs_10">10</system:String>
+
+    <!-- ********** 030 Game overview ********** -->
+    <system:String x:Key="_G_Local_030_Txt_Out_NextPlayer">Next player</system:String>
+    <system:String x:Key="_G_Local_030_Txt_Out_Score">Score</system:String>
+    <system:String x:Key="_G_Local_030_Txt_Out_Finish">Finish</system:String>
+    <system:String x:Key="_G_Local_030_Txt_Out_Points">Points</system:String>
+    <system:String x:Key="_G_Local_030_Txt_Out_GameMode">Game mode</system:String>
+    <system:String x:Key="_G_Local_030_Txt_Out_KIDifficulty">Bot difficulty</system:String>
+    <system:String x:Key="_G_Local_030_Txt_Out_Val_GameMode_1">Single out</system:String>
+    <system:String x:Key="_G_Local_030_Txt_Out_Val_GameMode_2">Double out</system:String>
+    <system:String x:Key="_G_Local_030_Txt_Out_Val_GameMode_3">Triple out</system:String>
+    <system:String x:Key="_G_Local_030_Txt_Out_Val_BotDifficult_1">Easy</system:String>
+    <system:String x:Key="_G_Local_030_Txt_Out_Val_BotDifficult_2">Medium</system:String>
+    <system:String x:Key="_G_Local_030_Txt_Out_Val_BotDifficult_3">Hard</system:String>
+    <system:String x:Key="_G_Local_030_Txt_Out_NewGame">Lets gooo!</system:String>
+    <system:String x:Key="_G_Local_030_Txt_Out_Sets">Sets</system:String>
+    <system:String x:Key="_G_Local_030_Txt_Out_Legs">Legs</system:String>
+
+    <!-- ********** 030 Game overview ********** -->
+    <system:String x:Key="_G_Local_030_Txt_Out_ActScore">Score:</system:String>
+    
+    <!-- ********** 032 Game bot ********** -->
+    <system:String x:Key="_G_Local_032_Txt_Out_ActThrow">Actual throw</system:String>
+    <system:String x:Key="_G_Local_032_Txt_Out_ActScore">Actual score</system:String>
+    <system:String x:Key="_G_Local_032_Btn_Back">Back</system:String>
+
+    <!-- ********** 035 Game end ********** -->
+    <system:String x:Key="_G_Local_035_Txt_Out_NewGame">New game</system:String>
+    <system:String x:Key="_G_Local_035_Txt_Out_RestartGame">Restart game</system:String>
+    <system:String x:Key="_G_Local_035_Txt_Out_Continued">Continue game</system:String>
+    <system:String x:Key="_G_Local_035_Txt_Out_WinLoss">Win/Loss</system:String>
+    <system:String x:Key="_G_Local_035_Txt_Out_Avg">Average</system:String>
+    <system:String x:Key="_G_Local_035_Txt_Out_Throw">Throws</system:String>
+    <system:String x:Key="_G_Local_035_Txt_Out_HighestScore">Heightest score</system:String>
+    <system:String x:Key="_G_Local_035_Txt_Out_RankingAvg">Ranking avg.</system:String>
+
+    <!-- ********** 040 Statistic ********** -->
+    <system:String x:Key="_G_Local_040_Btn_Player">Player</system:String>
+    <system:String x:Key="_G_Local_040_Btn_Games">Games</system:String>
+    <system:String x:Key="_G_Local_040_Btn_Graphs">Graphs</system:String>
+    <system:String x:Key="_G_Local_040_Btn_DG_Export_Game">Export game</system:String>
+    <system:String x:Key="_G_Local_040_Btn_DG_Export_Player">Export player</system:String>
+    <system:String x:Key="_G_Local_040_Btn_DG_Player">Player</system:String>
+    <system:String x:Key="_G_Local_040_Btn_DG_Legs">Leg winner</system:String>
+    <system:String x:Key="_G_Local_040_Btn_DG_GameStatistic">Game stat</system:String>
+    <system:String x:Key="_G_Local_040_Txt_Out_Player">Player</system:String>
+    <system:String x:Key="_G_Local_040_Txt_Out_Games">Games</system:String>
+    <system:String x:Key="_G_Local_040_Txt_Out_LegsWin">Legs win</system:String>
+    <system:String x:Key="_G_Local_040_Txt_Out_SetsWin">Sets win</system:String>
+    <system:String x:Key="_G_Local_040_Txt_Out_Win">Win</system:String>
+    <system:String x:Key="_G_Local_040_Txt_Out_Loss">Loss</system:String>
+    <system:String x:Key="_G_Local_040_Txt_Out_GameTime">Game time</system:String>
+    <system:String x:Key="_G_Local_040_Txt_Out_ThrowTime">Throw time</system:String>
+    <system:String x:Key="_G_Local_040_Txt_Out_Throws">Throws</system:String>
+    <system:String x:Key="_G_Local_040_Txt_Out_Points">Points</system:String>
+    <system:String x:Key="_G_Local_040_Txt_Out_AvgPoints">Avg. points</system:String>
+    <system:String x:Key="_G_Local_040_Txt_Out_AvgPosition">Avg. position</system:String>
+    
+    <!-- ********** 060 Player ********** -->
+    <system:String x:Key="_G_Local_060_Txt_Out_PlayerName">Player name</system:String>
+    <system:String x:Key="_G_Local_060_Txt_Out_Firstname">Firstname</system:String>
+    <system:String x:Key="_G_Local_060_Txt_Out_Lastname">Lastname</system:String>
+    <system:String x:Key="_G_Local_060_Txt_Out_Country">Country</system:String>
+    <system:String x:Key="_G_Local_060_Txt_Out_Birthday">Birthday</system:String>
+    <system:String x:Key="_G_Local_060_Btn_NewPlayer">New player</system:String>
+    <system:String x:Key="_G_Local_060_Btn_DeletePlayer">Delete player</system:String>
+    <system:String x:Key="_G_Local_060_Btn_EditPlayer">Edit player</system:String>
+    <system:String x:Key="_G_Local_060_Btn_ImportPlayer">Import player</system:String>
+    <system:String x:Key="_G_Local_060_Btn_ExportPlayer">Export player</system:String>
+
+    <!-- ********** 100 Options ********** -->
+    <system:String x:Key="_G_Local_100_Txt_Out_Opt_Vid_In">Video input</system:String>
+    <system:String x:Key="_G_Local_100_Txt_Out_Opt_Vid_In_En">Enable</system:String>
+    <system:String x:Key="_G_Local_100_Btn_Opt_Vid_In">Configure</system:String>
+
+    <!-- ********** 102 Options - Cam ********** -->
+    <system:String x:Key="_G_Local_TopMenu_Btn_WC_Start">Start</system:String>
+    <system:String x:Key="_G_Local_TopMenu_Btn_WC_Stop">Stop</system:String>
+    <system:String x:Key="_G_Local_TopMenu_Btn_WC_Config">Cam config</system:String>
+    <system:String x:Key="_G_Local_TopMenu_Btn_WC_AutoRecognize_01">Auto recognize board</system:String>
+    <system:String x:Key="_G_Local_TopMenu_Btn_WC_AutoRecognize_02">Manual recognize board</system:String>
+    <system:String x:Key="_G_Local_TopMenu_Btn_WC_AutoRecognize_Manual">Prediction</system:String>
+    
+</ResourceDictionary>

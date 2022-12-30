@@ -1,0 +1,150 @@
+﻿<Window x:Class="DDD_WPF.Screens._Global._G_Prompt"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:DDD_WPF.Screens._Global"
+        mc:Ignorable="d"
+        Style="{StaticResource _G_Style_Scr_Main}"
+        WindowStartupLocation="CenterScreen"
+        Title="_G_Prompt_Default" 
+        Width="350" 
+        Height="200" 
+        ResizeMode="NoResize" 
+        UseLayoutRounding="True" 
+        WindowStyle="None" 
+        BorderBrush="White"
+        BorderThickness="1">
+        <!--Topmost="True"-->
+
+    <Window.Triggers>
+        <EventTrigger RoutedEvent="Window.Loaded">
+            <BeginStoryboard>
+                <Storyboard Duration="0:0:1" 
+                            Storyboard.TargetProperty="Opacity">
+                    <DoubleAnimation From="0.5" To="1"/>
+                </Storyboard>
+            </BeginStoryboard>
+        </EventTrigger>
+    </Window.Triggers>
+
+    <Grid>
+        <!-- ********** Grid definition ********** -->
+        <Grid.RowDefinitions>
+            <RowDefinition MinHeight="50" Height="*"/>
+            <RowDefinition MinHeight="50" Height="*"/>
+            <RowDefinition MinHeight="50" Height="*"/>
+            <RowDefinition MinHeight="50" Height="*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition MinWidth="25" Width="*"/>
+            <ColumnDefinition MinWidth="50" Width="*"/>
+            <ColumnDefinition MinWidth="50" Width="*"/>
+            <ColumnDefinition MinWidth="50" Width="*"/>
+            <ColumnDefinition MinWidth="50" Width="*"/>
+            <ColumnDefinition MinWidth="50" Width="*"/>
+            <ColumnDefinition MinWidth="50" Width="*"/>
+            <ColumnDefinition MinWidth="25" Width="*"/>
+        </Grid.ColumnDefinitions>
+
+        <!-- ********** Screen layout **********-->
+        <!-- Text output -->
+        <TextBox Style="{StaticResource _G_Style_Txt_Out}"
+                 Name="_G_Txt_Out_Header_Line_01"
+                 Grid.Column="1"
+                 Grid.Row="0"
+                 Grid.ColumnSpan="6" 
+                 Width="300"
+                 Text="Prompt" 
+                 Height="50" 
+                 HorizontalAlignment="Center" 
+                 VerticalAlignment="Center"
+                 TextBlock.TextAlignment="Center" 
+                 BorderBrush="{x:Null}"
+                 TextDecorations="underline" FontSize="24"/>
+        <TextBox Style="{StaticResource _G_Style_Txt_Out}"
+                 Name="_G_Txt_Out_Val_Line_02"
+                 Grid.Column="1"
+                 Grid.Row="1"
+                 Grid.ColumnSpan="6" 
+                 Width="Auto"
+                 Margin="5"
+                 Height="Auto" 
+                 BorderBrush="{x:Null}" 
+                 FontSize="16" 
+                 MaxLines="2" 
+                 TextWrapping="Wrap" 
+                 TextBlock.TextAlignment="Center"
+                 IsUndoEnabled="False"/>
+        <TextBox Style="{StaticResource _G_Style_Txt_Out}"
+                 Name="_G_Txt_Out_Val_Line_03"
+                 Grid.Column="1"
+                 Grid.Row="2"
+                 Grid.ColumnSpan="6" 
+                 Width="Auto"
+                 Margin="5"
+                 Height="Auto" 
+                 BorderBrush="{x:Null}" 
+                 FontSize="16" 
+                 TextBlock.TextAlignment="Center"
+                 TextWrapping="Wrap" VerticalScrollBarVisibility="Auto"/>
+
+        <!-- Buttons -->
+        <!-- Action 1 - OK -->
+        <Button Style="{StaticResource _G_Style_Btn_Standard}"
+                Name="_G_Btn_01_OK"
+                Content="{StaticResource _G_Local_Prompt_Btn_OK}"
+                Grid.Row="4"
+                Grid.Column="2" 
+                Margin="5" 
+                Width="190"
+                Click="_G_Btn_01_OK_Click"/>
+        <!-- Action 2 - Yes/No -->
+        <Button Style="{StaticResource _G_Style_Btn_Standard}"
+                Name="_G_Btn_02_Yes"
+                Content="{StaticResource _G_Local_Prompt_Btn_Yes}"
+                Grid.Row="4"
+                Grid.Column="1"
+                Grid.ColumnSpan="3"
+                Margin="5"
+                Width="140"
+                Click="_G_Btn_02_Yes_Click"/>
+        <Button Style="{StaticResource _G_Style_Btn_Standard}"
+                Name="_G_Btn_02_No"
+                Content="{StaticResource _G_Local_Prompt_Btn_No}"
+                Grid.Row="4"
+                Grid.Column="4"
+                Grid.ColumnSpan="3"
+                Margin="5"
+                Width="140"
+                Click="_G_Btn_02_No_Click"/>
+        <!-- Action 3 - Yes/Cancel/No -->
+        <Button Style="{StaticResource _G_Style_Btn_Standard}"
+                Name="_G_Btn_03_Yes"
+                Content="{StaticResource _G_Local_Prompt_Btn_Yes}"
+                Grid.Row="4"
+                Grid.Column="1"
+                Grid.ColumnSpan="3"
+                Margin="5"
+                Width="90"
+                Click="_G_Btn_03_Yes_Click"/>
+        <Button Style="{StaticResource _G_Style_Btn_Standard}"
+                Name="_G_Btn_03_Cancle"
+                Content="{StaticResource _G_Local_Prompt_Btn_Cancel}"
+                Grid.Row="4"
+                Grid.Column="3"
+                Grid.ColumnSpan="3"
+                Margin="5"
+                Width="90"
+                Click="_G_Btn_03_Cancle_Click"/>
+        <Button Style="{StaticResource _G_Style_Btn_Standard}"
+                Name="_G_Btn_03_No"
+                Content="{StaticResource _G_Local_Prompt_Btn_No}"
+                Grid.Row="4"
+                Grid.Column="5"
+                Grid.ColumnSpan="3"
+                Margin="5"
+                Width="90"
+                Click="_G_Btn_03_No_Click"/>
+    </Grid>
+</Window>

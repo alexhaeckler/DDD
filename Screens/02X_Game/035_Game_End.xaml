@@ -1,0 +1,232 @@
+﻿<Window x:Class="DDD_WPF.Screens._02X_Game._035_Game_End"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        Style="{StaticResource _G_Style_Scr_Main}"
+        WindowStartupLocation="CenterScreen"
+        Title="_035_Game_End">
+    <!--Topmost="True"-->
+    <Grid HorizontalAlignment="left" VerticalAlignment="top">
+        <!-- ********** Grid definition ********** -->
+        <Grid.RowDefinitions>
+            <RowDefinition MinHeight="50" Height="*"/>
+            <RowDefinition MinHeight="50" Height="*"/>
+            <RowDefinition MinHeight="50" Height="*"/>
+            <RowDefinition MinHeight="50" Height="*"/>
+            <RowDefinition MinHeight="50" Height="*"/>
+            <RowDefinition MinHeight="50" Height="*"/>
+            <RowDefinition MinHeight="50" Height="*"/>
+            <RowDefinition MinHeight="50" Height="*"/>
+            <RowDefinition MinHeight="50" Height="*"/>
+            <RowDefinition MinHeight="50" Height="*"/>
+            <RowDefinition MinHeight="50" Height="*"/>
+            <RowDefinition MinHeight="50" Height="*"/>
+            <RowDefinition MinHeight="50" Height="*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition MinWidth="50" Width="*"/>
+            <ColumnDefinition MinWidth="50" Width="*"/>
+            <ColumnDefinition MinWidth="50" Width="*"/>
+            <ColumnDefinition MinWidth="50" Width="*"/>
+            <ColumnDefinition MinWidth="50" Width="*"/>
+            <ColumnDefinition MinWidth="50" Width="*"/>
+            <ColumnDefinition MinWidth="50" Width="*"/>
+            <ColumnDefinition MinWidth="50" Width="*"/>
+            <ColumnDefinition MinWidth="50" Width="*"/>
+            <ColumnDefinition MinWidth="50" Width="*"/>
+            <ColumnDefinition MinWidth="50" Width="*"/>
+            <ColumnDefinition MinWidth="50" Width="*"/>
+            <ColumnDefinition MinWidth="50" Width="*"/>
+            <ColumnDefinition MinWidth="50" Width="*"/>
+            <ColumnDefinition MinWidth="50" Width="*"/>
+            <ColumnDefinition MinWidth="50" Width="*"/>
+            <ColumnDefinition MinWidth="50" Width="*"/>
+            <ColumnDefinition MinWidth="50" Width="*"/>
+        </Grid.ColumnDefinitions>
+
+        <!-- ********** Top menu ********** -->
+        <Button Style="{StaticResource _G_Style_Btn_TopMenu}"
+                Name="_035_Btn_Menu_NewGame"
+                Content="{StaticResource _G_Local_TopMenu_Btn_NewGame}" 
+                Grid.Row="0" 
+                Grid.Column="1"
+                IsEnabled="false"/>
+        <Button Style="{StaticResource _G_Style_Btn_TopMenu}"
+                Name="_035_Btn_Menu_Home"
+                Content="{StaticResource _G_Local_TopMenu_Btn_Home}" 
+                Grid.Row="0" 
+                Grid.Column="3" 
+                Click="_035_Btn_Menu_Home_Click"/>
+        <Button Style="{StaticResource _G_Style_Btn_TopMenu}"
+                Name="_035_Btn_Menu_Statistic"
+                Content="{StaticResource _G_Local_TopMenu_Btn_Statistic}" 
+                Grid.Row="0"
+                IsEnabled="false"
+                Grid.Column="5"/>
+        <Button Style="{StaticResource _G_Style_Btn_TopMenu}"
+                x:Name="_100_Btn_Menu_Player_Copy"
+                Content="{StaticResource _G_Local_TopMenu_Btn_Options}" 
+                Grid.Row="0" 
+                Grid.Column="13" 
+                IsEnabled="false"/>
+        <Button Style="{StaticResource _G_Style_Btn_TopMenu}"
+                Name="_035_Btn_Menu_Player"
+                Content="{StaticResource _G_Local_TopMenu_Btn_Player}" 
+                Grid.Row="0" 
+                Grid.Column="7" 
+                IsEnabled="false"
+                Click="_035_Btn_Menu_Player_Click"/>
+        <Button Style="{StaticResource _G_Style_Btn_TopMenu}"
+                Name="_035_Btn_Menu_Exit"
+                Content="{StaticResource _G_Local_TopMenu_Btn_Exit}" 
+                Grid.Row="0" 
+                Grid.Column="15" 
+                Click="_035_Btn_Menu_Exit_Click"/>
+
+        <!-- ********** Screen layout **********-->
+        <!-- Text output -->
+        <!-- Textbox -->
+        <TextBox Style="{StaticResource _G_Style_Txt_Out}"
+            x:Name="_035_Txt_Out_Avg"
+            Text="{StaticResource _G_Local_035_Txt_Out_Avg}"
+            FontSize="25"
+            Grid.Row="4"
+            Grid.ColumnSpan="4" 
+            Width="Auto"
+            Height="Auto"
+            Grid.Column="10"
+            Margin="5"/>
+        <TextBox Style="{StaticResource _G_Style_Txt_Out}"
+            x:Name="_035_Txt_Out_Val_Avg"
+            FontSize="25"
+            Grid.Row="4"
+            Grid.Column="14"
+            Grid.ColumnSpan="3" 
+            Width="Auto"
+            Height="Auto"
+            Margin="5"/>
+        <TextBox Style="{StaticResource _G_Style_Txt_Out}"
+            x:Name="_035_Txt_Out_AvgGames"
+            Text="{StaticResource _G_Local_035_Txt_Out_Throw}"
+            FontSize="25"
+            Grid.Row="5"
+            Grid.ColumnSpan="4" 
+            Width="Auto"
+            Height="Auto"
+            Grid.Column="10"
+            Margin="5"/>
+        <TextBox Style="{StaticResource _G_Style_Txt_Out}"
+            x:Name="_035_Txt_Out_Val_Throw"
+            FontSize="25"
+            Grid.Row="5"
+            Grid.Column="14"
+            Grid.ColumnSpan="3" 
+            Width="Auto"
+            Height="Auto"
+            Margin="5"/>
+        <TextBox Style="{StaticResource _G_Style_Txt_Out}"
+            x:Name="_035_Txt_Out_WinLoss"
+            Text="{StaticResource _G_Local_035_Txt_Out_WinLoss}"
+            FontSize="25"
+            Grid.Row="6"
+            Grid.ColumnSpan="4" 
+            Width="Auto"
+            Height="Auto"
+            Grid.Column="10"
+            Margin="5"/>
+        <TextBox Style="{StaticResource _G_Style_Txt_Out}"
+            x:Name="_035_Txt_Out_Val_WinLoss"
+            FontSize="25"
+            Grid.Row="6"
+            Grid.Column="14"
+            Grid.ColumnSpan="3" 
+            Width="Auto"
+            Height="Auto"
+            Margin="5"/>
+        <TextBox Style="{StaticResource _G_Style_Txt_Out}"
+            x:Name="_035_Txt_Out_HighestScore"
+            Text="{StaticResource _G_Local_035_Txt_Out_HighestScore}"
+            FontSize="25"
+            Grid.Row="7"
+            Grid.ColumnSpan="4" 
+            Width="Auto"
+            Height="Auto"
+            Grid.Column="10"
+            Margin="5"/>
+        <TextBox Style="{StaticResource _G_Style_Txt_Out}"
+            x:Name="_035_Txt_Out_Val_HighestScore"
+            FontSize="25"
+            Grid.Row="7"
+            Grid.Column="14"
+            Grid.ColumnSpan="3" 
+            Width="Auto"
+            Height="Auto"
+            Margin="5"/>
+        <TextBox Style="{StaticResource _G_Style_Txt_Out}"
+            x:Name="_035_Txt_Out_RankingAvg"
+            Text="{StaticResource _G_Local_035_Txt_Out_RankingAvg}"
+            FontSize="25"
+            Grid.Row="8"
+            Grid.ColumnSpan="4" 
+            Width="Auto"
+            Height="Auto"
+            Grid.Column="10"
+            Margin="5"/>
+        <TextBox Style="{StaticResource _G_Style_Txt_Out}"
+            x:Name="_035_Txt_Out_Val_RankingAvg"
+            FontSize="25"
+            Grid.Row="8"
+            Grid.Column="14"
+            Grid.ColumnSpan="3" 
+            Width="Auto"
+            Height="Auto"
+            Margin="5"/>
+
+        <Label Grid.ColumnSpan="4" 
+               Content="Game ended"
+               Grid.Column="7" 
+               HorizontalContentAlignment="Center"
+               VerticalContentAlignment="Center" 
+               Grid.Row="2" 
+               FontSize="30"
+               TextBlock.Foreground="WhiteSmoke"/>
+        <ListBox Style="{StaticResource _G_Style_ListBox}"
+            x:Name="_035_ListBox_Ranking"
+            Grid.Column="1" 
+            Grid.Row="4" 
+            SelectionMode="Single"
+            Grid.RowSpan="6" 
+            Height="290" 
+            Grid.ColumnSpan="7" 
+            Width="340" Margin="5" SelectionChanged="_035_ListBox_Ranking_SelectionChanged"/>
+
+        <!-- Buttons -->
+        <Button Style="{StaticResource _G_Style_Btn_Standard}"
+                Name="_035_Btn_Continued"
+                Content="{StaticResource _G_Local_035_Txt_Out_Continued}"
+                Grid.Row="11" 
+                Grid.Column="1"
+                TabIndex="10" 
+                Margin="5" 
+                Width="190" Click="_035_Btn_Continued_Click" Visibility="Hidden"/>
+        <Button Style="{StaticResource _G_Style_Btn_Standard}"
+                Name="_035_Btn_RestartGame"
+                Content="{StaticResource _G_Local_035_Txt_Out_RestartGame}"
+                Grid.Row="11" 
+                Grid.Column="5"
+                TabIndex="10" 
+                Margin="5" 
+                Width="190" Click="_035_Btn_RestartGame_Click"/>
+        <Button Style="{StaticResource _G_Style_Btn_Standard}"
+                Name="_035_Btn_NewGame"
+                Content="{StaticResource _G_Local_035_Txt_Out_NewGame}"
+                Grid.Row="11" 
+                Grid.Column="9"
+                TabIndex="10" 
+                Margin="5" 
+                Width="190" 
+                Click="_035_Btn_NewGame_Click_1"/>
+        
+    </Grid>
+</Window>

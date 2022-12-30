@@ -1,0 +1,146 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="DDD.Datahandling" Collapsed="true">
+    <Position X="4.5" Y="0.5" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AAAIgYAgTCAAAAAAAAAAAQEAAAEAIAACABAAAAABACQ=</HashCode>
+      <FileName>Program\Datahandling.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="DDD.DatahandlingPlayer" Collapsed="true">
+    <Position X="1.5" Y="1.75" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AAIogJAASWAAAABwKCEUQAAIAFEEgAASAICAg0gEAAA=</HashCode>
+      <FileName>Program\Datahandling.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DDD.DatahandlingGame" Collapsed="true">
+    <Position X="4.5" Y="1.75" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AAA4gIIByCAAEAQoIDERAAAAQBEQAABCAYCCgkAkoAE=</HashCode>
+      <FileName>Program\Datahandling.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="DDD.DatahandlingPlayerStat" Collapsed="true">
+    <Position X="6.75" Y="1.75" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AABogoABSCQAQAhpICGwIkCggAEAQFACCYCCgkAEgAA=</HashCode>
+      <FileName>Program\Datahandling.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="DDD.DHPlayerExImport" Collapsed="true">
+    <Position X="1.5" Y="3.25" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Program\Datahandling.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DDD.DatahandlingWPF" Collapsed="true">
+    <Position X="2" Y="4.5" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAABBAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Program\Datahandling.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DDD.DHListBox" Collapsed="true">
+    <Position X="2" Y="5.75" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAACAAABAAAAABAAAAAAQAEAAAAAAAggAIAAA=</HashCode>
+      <FileName>Program\Datahandling.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="DDD.Game" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="12" Y="0.5" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>BAgAAAgICCACAAJAUIACQAAAQAgAAFAIAAAEggAgCAA=</HashCode>
+      <FileName>Program\Datahandling.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="DDD.Statistic" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="9.25" Y="1.5" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>KAAAIAiAACAAAAAAAAkQAAAAAAACAAAAAAQAAqAAAFA=</HashCode>
+      <FileName>Program\Datahandling.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="DDD.Configuration" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="9.25" Y="0.5" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>CAGQgBAAwSCAuAAEkAARAIAAKAAAAFAAAACEAwEkOAE=</HashCode>
+      <FileName>Program\Datahandling.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="DDD.Bot">
+    <Position X="9.25" Y="3" Width="2.25" />
+    <Compartments>
+      <Compartment Name="Nested Types" Collapsed="false" />
+    </Compartments>
+    <NestedTypes>
+      <Class Name="DDD.Bot.Person" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>Program\Datahandling.cs</NewMemberFileName>
+        </TypeIdentifier>
+      </Class>
+    </NestedTypes>
+    <TypeIdentifier>
+      <HashCode>AAAQAAAAAAACQQABAgAAIAQAAAAAIIBAAAAAAAAAAAY=</HashCode>
+      <FileName>Program\Datahandling.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DDD.DartBot">
+    <Position X="6" Y="2.75" Width="2.25" />
+    <Compartments>
+      <Compartment Name="Nested Types" Collapsed="false" />
+    </Compartments>
+    <NestedTypes>
+      <Enum Name="DDD.DartBot.ValueMultiplicator" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>Program\Datahandling.cs</NewMemberFileName>
+        </TypeIdentifier>
+      </Enum>
+      <Enum Name="DDD.DartBot.ValueSingle" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>Program\Datahandling.cs</NewMemberFileName>
+        </TypeIdentifier>
+      </Enum>
+      <Enum Name="DDD.DartBot.ValueDouble" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>Program\Datahandling.cs</NewMemberFileName>
+        </TypeIdentifier>
+      </Enum>
+      <Enum Name="DDD.DartBot.ValueTriple" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>Program\Datahandling.cs</NewMemberFileName>
+        </TypeIdentifier>
+      </Enum>
+      <Enum Name="DDD.DartBot.ValueBull" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>Program\Datahandling.cs</NewMemberFileName>
+        </TypeIdentifier>
+      </Enum>
+      <Enum Name="DDD.DartBot.ValueCheckOut" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>Program\Datahandling.cs</NewMemberFileName>
+        </TypeIdentifier>
+      </Enum>
+      <Enum Name="DDD.DartBot.CheckValuesDescription" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>Program\Datahandling.cs</NewMemberFileName>
+        </TypeIdentifier>
+      </Enum>
+    </NestedTypes>
+    <TypeIdentifier>
+      <HashCode>CCBAAIgAYGASBAkEgAgAAAAKAEIAAEAAAACACgAAICA=</HashCode>
+      <FileName>Program\Datahandling.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

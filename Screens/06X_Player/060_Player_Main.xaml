@@ -1,0 +1,212 @@
+﻿<Window x:Class="DDD_WPF.Screens._06X_Player._060_Player_Main"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:DDD_WPF.Screens._06X_Player"
+        mc:Ignorable="d"
+        Style="{StaticResource _G_Style_Scr_Main}"
+        WindowStartupLocation="CenterScreen"
+        Title="_060_Player_Main" 
+        Initialized="Window_Initialized">
+
+    <Grid HorizontalAlignment="left" VerticalAlignment="top">
+        <!-- ********** Grid definition ********** -->
+        <Grid.RowDefinitions>
+            <RowDefinition MinHeight="50" Height="*"/>
+            <RowDefinition MinHeight="50" Height="*"/>
+            <RowDefinition MinHeight="50" Height="*"/>
+            <RowDefinition MinHeight="50" Height="*"/>
+            <RowDefinition MinHeight="50" Height="*"/>
+            <RowDefinition MinHeight="50" Height="*"/>
+            <RowDefinition MinHeight="50" Height="*"/>
+            <RowDefinition MinHeight="50" Height="*"/>
+            <RowDefinition MinHeight="50" Height="*"/>
+            <RowDefinition MinHeight="50" Height="*"/>
+            <RowDefinition MinHeight="50" Height="*"/>
+            <RowDefinition MinHeight="50" Height="*"/>
+            <RowDefinition MinHeight="50" Height="*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition MinWidth="50" Width="*"/>
+            <ColumnDefinition MinWidth="50" Width="*"/>
+            <ColumnDefinition MinWidth="50" Width="*"/>
+            <ColumnDefinition MinWidth="50" Width="*"/>
+            <ColumnDefinition MinWidth="50" Width="*"/>
+            <ColumnDefinition MinWidth="50" Width="*"/>
+            <ColumnDefinition MinWidth="50" Width="*"/>
+            <ColumnDefinition MinWidth="50" Width="*"/>
+            <ColumnDefinition MinWidth="50" Width="*"/>
+            <ColumnDefinition MinWidth="50" Width="*"/>
+            <ColumnDefinition MinWidth="50" Width="*"/>
+            <ColumnDefinition MinWidth="50" Width="*"/>
+            <ColumnDefinition MinWidth="50" Width="*"/>
+            <ColumnDefinition MinWidth="50" Width="*"/>
+            <ColumnDefinition MinWidth="50" Width="*"/>
+            <ColumnDefinition MinWidth="50" Width="*"/>
+            <ColumnDefinition MinWidth="50" Width="*"/>
+            <ColumnDefinition MinWidth="50" Width="*"/>
+        </Grid.ColumnDefinitions>
+
+        <!-- ********** Top menu ********** -->
+        <Button Style="{StaticResource _G_Style_Btn_TopMenu}"
+                Name="_060_Btn_Menu_NewGame"
+                Content="{StaticResource _G_Local_TopMenu_Btn_NewGame}" 
+                Grid.Row="0" 
+                Grid.Column="1"
+                Click="_060_Btn_Menu_NewGame_Click"/>
+        <Button Style="{StaticResource _G_Style_Btn_TopMenu}"
+                Name="_060_Btn_Menu_Home"
+                Content="{StaticResource _G_Local_TopMenu_Btn_Home}" 
+                Grid.Row="0" 
+                Grid.Column="3" 
+                Click="_060_Btn_Menu_Home_Click"/>
+        <Button Style="{StaticResource _G_Style_Btn_TopMenu}"
+                Name="_060_Btn_Menu_Statistic"
+                Content="{StaticResource _G_Local_TopMenu_Btn_Statistic}" 
+                Grid.Row="0" 
+                Grid.Column="5" HorizontalAlignment="Left" Width="90" 
+                Click="_060_Btn_Menu_Statistic_Click"/>
+        <Button Style="{StaticResource _G_Style_Btn_TopMenu}"
+                Name="_060_Btn_Menu_Player"
+                Content="{StaticResource _G_Local_TopMenu_Btn_Player}" 
+                Grid.Row="0" 
+                Grid.Column="7"
+                Selector.IsSelected="True"
+                IsEnabled="False"/>
+        <Button Style="{StaticResource _G_Style_Btn_TopMenu}"
+                Name="_060_Btn_Menu_Exit"
+                Content="{StaticResource _G_Local_TopMenu_Btn_Exit}" 
+                Grid.Row="0" 
+                Grid.Column="15" 
+                Click="_060_Btn_Menu_Exit_Click"/>
+
+        <!-- ********** Screen layout **********-->
+        <!-- Text input -->
+        <TextBox Style="{StaticResource _G_Style_Txt_Inp}"
+                 Name="_060_Txt_Inp_PlayerName"
+                 Uid="_060_Txt_Inp_PlayerName"
+                 Grid.Column="5"
+                 Grid.Row="3"
+                 TabIndex="1" 
+                 MaxLength="32"
+                 PreviewTextInput="_060_Txt_Inp_PlayerName_PreviewTextInput"/>
+        <TextBox Style="{StaticResource _G_Style_Txt_Inp}"
+                 Name="_060_Txt_Inp_Firstname"
+                 Grid.Column="5"
+                 Grid.Row="4"
+                 MaxLength="32"
+                 TabIndex="2" PreviewTextInput="_060_Txt_Inp_Firstname_PreviewTextInput"/>
+        <TextBox Style="{StaticResource _G_Style_Txt_Inp}"
+                 Name="_060_Txt_Inp_Lastname"
+                 Grid.Column="5"
+                 Grid.Row="5"
+                 MaxLength="32"
+                 TabIndex="3" PreviewTextInput="_060_Txt_Inp_Lastname_PreviewTextInput"/>
+        <TextBox Style="{StaticResource _G_Style_Txt_Inp}"
+                 Name="_060_Txt_Inp_Country"
+                 Grid.Column="5"
+                 Grid.Row="6"
+                 MaxLength="32"
+                 TabIndex="4" PreviewTextInput="_060_Txt_Inp_Country_PreviewTextInput"/>
+        <TextBox Style="{StaticResource _G_Style_Txt_Inp}"
+                 Name="_060_Txt_Inp_BirthdayDay"
+                 Grid.Column="5"
+                 Grid.Row="7"
+                 TabIndex="5" 
+                 Grid.ColumnSpan="2" 
+                 Margin="5,5,35,5" 
+                 Width="Auto" 
+                 PreviewTextInput="NumberValidationTextBox"
+                 MaxLength="2" />
+        <TextBox Style="{StaticResource _G_Style_Txt_Inp}"
+                 x:Name="_060_Txt_Inp_BirthdayMonth"
+                 Grid.Column="6"
+                 Grid.Row="7"
+                 TabIndex="6" 
+                 Grid.ColumnSpan="2" 
+                 Margin="20,5" 
+                 Width="Auto"
+                 PreviewTextInput="NumberValidationTextBox"
+                 MaxLength="2"/>
+        <TextBox Style="{StaticResource _G_Style_Txt_Inp}"
+                 x:Name="_060_Txt_Inp_BirthdayYear"
+                 Grid.Column="7"
+                 Grid.Row="7"
+                 TabIndex="7" 
+                 Grid.ColumnSpan="2" 
+                 Margin="35,5,5,5" 
+                 Width="Auto"
+                 PreviewTextInput="NumberValidationTextBox"
+                 MaxLength="4"/>
+
+        <!-- Text output -->
+        <TextBox Style="{StaticResource _G_Style_Txt_Out}"
+                 Name="_060_Txt_Out_PlayerName"
+                 Grid.Column="1"
+                 Grid.Row="3"
+                 Text="{StaticResource _G_Local_060_Txt_Out_PlayerName}"/>
+        <TextBox Style="{StaticResource _G_Style_Txt_Out}"
+                 Name="_060_Txt_Out_Firstname"
+                 Grid.Column="1"
+                 Grid.Row="4"
+                 Text="{StaticResource _G_Local_060_Txt_Out_Firstname}"/>
+        <TextBox Style="{StaticResource _G_Style_Txt_Out}"
+                 Name="_060_Txt_Out_Lastname"
+                 Grid.Column="1"
+                 Grid.Row="5"
+                 Text="{StaticResource _G_Local_060_Txt_Out_Lastname}"/>
+        <TextBox Style="{StaticResource _G_Style_Txt_Out}"
+                 Name="_060_Txt_Out_Country"
+                 Grid.Column="1"
+                 Grid.Row="6"
+                 Text="{StaticResource _G_Local_060_Txt_Out_Country}"/>
+        <TextBox Style="{StaticResource _G_Style_Txt_Out}"
+                 Name="_060_Txt_Out_Birthday"
+                 Grid.Column="1"
+                 Grid.Row="7"
+                 Text="{StaticResource _G_Local_060_Txt_Out_Birthday}"/>
+
+        <!-- Buttons -->
+        <Button Style="{StaticResource _G_Style_Btn_Standard}"
+                Name="_060_Btn_NewPlayer"
+                Content="{StaticResource _G_Local_060_Btn_NewPlayer}"
+                Grid.Row="9" 
+                Grid.Column="1"
+                TabIndex="10" Click="_060_Btn_NewPlayer_Click"/>
+        <Button Style="{StaticResource _G_Style_Btn_Standard}"
+                Name="_060_Btn_EditPlayer"
+                Content="{StaticResource _G_Local_060_Btn_EditPlayer}"
+                Grid.Row="10" 
+                Grid.Column="1"
+                TabIndex="10" Click="_060_Btn_EditPlayer_Click"/>
+        <Button Style="{StaticResource _G_Style_Btn_Standard}"
+                Name="_060_Btn_DeletePlayer"
+                Content="{StaticResource _G_Local_060_Btn_DeletePlayer}"
+                Grid.Row="11"
+                Grid.Column="1"
+                TabIndex="11" Click="_060_Btn_DeletePlayer_Click"/>
+
+        <Button Style="{StaticResource _G_Style_Btn_Standard}"
+                Name="_060_Btn_ImportPlayer"
+                Content="{StaticResource _G_Local_060_Btn_ImportPlayer}"
+                Grid.Row="10" 
+                Grid.Column="6"
+                TabIndex="12"/>
+        <Button Style="{StaticResource _G_Style_Btn_Standard}"
+                Name="_060_Btn_ExportPlayer"
+                Content="{StaticResource _G_Local_060_Btn_ExportPlayer}"
+                Grid.Row="11" 
+                Grid.Column="6"
+                TabIndex="13"/>
+
+        <!-- ListBox -->
+        <ListBox Style="{StaticResource _G_Style_ListBox}"
+                 Name="_060_ListBox_Player"
+                 Grid.Column="10" 
+                 Grid.Row="3" 
+                 SelectionChanged="_060_ListBox_Player_SelectionChanged" 
+                 SelectionMode="Multiple"/>
+    </Grid>
+
+</Window>

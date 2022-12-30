@@ -1,0 +1,401 @@
+﻿<Window x:Class="DDD_WPF.Screens._04X_Statistics._040_Statistic_Main"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:DDD_WPF.Screens._04X_Statistics"
+        Style="{StaticResource _G_Style_Scr_Main}"
+        mc:Ignorable="d"
+        WindowStartupLocation="CenterScreen"
+        Title="_040_Statistic_Main">
+    <Grid HorizontalAlignment="left" VerticalAlignment="top">
+        <!-- ********** Grid definition ********** -->
+        <Grid.RowDefinitions>
+            <RowDefinition MinHeight="50" Height="*"/>
+            <RowDefinition MinHeight="50" Height="*"/>
+            <RowDefinition MinHeight="50" Height="*"/>
+            <RowDefinition MinHeight="50" Height="*"/>
+            <RowDefinition MinHeight="50" Height="*"/>
+            <RowDefinition MinHeight="50" Height="*"/>
+            <RowDefinition MinHeight="50" Height="*"/>
+            <RowDefinition MinHeight="50" Height="*"/>
+            <RowDefinition MinHeight="50" Height="*"/>
+            <RowDefinition MinHeight="50" Height="*"/>
+            <RowDefinition MinHeight="50" Height="*"/>
+            <RowDefinition MinHeight="50" Height="*"/>
+            <RowDefinition MinHeight="50" Height="*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition MinWidth="50" Width="*"/>
+            <ColumnDefinition MinWidth="50" Width="*"/>
+            <ColumnDefinition MinWidth="50" Width="*"/>
+            <ColumnDefinition MinWidth="50" Width="*"/>
+            <ColumnDefinition MinWidth="50" Width="*"/>
+            <ColumnDefinition MinWidth="50" Width="*"/>
+            <ColumnDefinition MinWidth="50" Width="*"/>
+            <ColumnDefinition MinWidth="50" Width="*"/>
+            <ColumnDefinition MinWidth="50" Width="*"/>
+            <ColumnDefinition MinWidth="50" Width="*"/>
+            <ColumnDefinition MinWidth="50" Width="*"/>
+            <ColumnDefinition MinWidth="50" Width="*"/>
+            <ColumnDefinition MinWidth="50" Width="*"/>
+            <ColumnDefinition MinWidth="50" Width="*"/>
+            <ColumnDefinition MinWidth="50" Width="*"/>
+            <ColumnDefinition MinWidth="50" Width="*"/>
+            <ColumnDefinition MinWidth="50" Width="*"/>
+            <ColumnDefinition MinWidth="50" Width="*"/>
+        </Grid.ColumnDefinitions>
+        <!--#region header-->
+        <!-- ********** Top menu ********** -->
+        <Button Style="{StaticResource _G_Style_Btn_TopMenu}"
+                Name="_040_Btn_Menu_NewGame"
+                Content="{StaticResource _G_Local_TopMenu_Btn_NewGame}" 
+                Grid.Row="0" 
+                Grid.Column="1"
+                Click="_040_Btn_Menu_NewGame_Click"/>
+        <Button Style="{StaticResource _G_Style_Btn_TopMenu}"
+                Name="_040_Btn_Menu_Home"
+                Content="{StaticResource _G_Local_TopMenu_Btn_Home}" 
+                Grid.Row="0" 
+                Grid.Column="3" 
+                Click="_040_Btn_Menu_Home_Click"/>
+        <Button Style="{StaticResource _G_Style_Btn_TopMenu}"
+                Name="_040_Btn_Menu_Statistic"
+                Content="{StaticResource _G_Local_TopMenu_Btn_Statistic}" 
+                Grid.Row="0" 
+                Grid.Column="5"
+                IsEnabled="False"/>
+        <Button Style="{StaticResource _G_Style_Btn_TopMenu}"
+                Name="_040_Btn_Menu_Player"
+                Content="{StaticResource _G_Local_TopMenu_Btn_Player}" 
+                Grid.Row="0" 
+                Grid.Column="7"
+                Selector.IsSelected="True" Click="_040_Btn_Menu_Player_Click"/>
+        <Button Style="{StaticResource _G_Style_Btn_TopMenu}"
+                Name="_040_Btn_Menu_Exit"
+                Content="{StaticResource _G_Local_TopMenu_Btn_Exit}" 
+                Grid.Row="0" 
+                Grid.Column="15" Click="_040_Btn_Menu_Exit_Click"/>
+        <!--#endregion-->
+        <!-- ********** Screen layout **********-->
+        <!--#region player-->
+        <!--#region text output-->
+        <TextBox Style="{StaticResource _G_Style_Txt_Out}"
+                 Name="_040_Txt_Out_Games"
+                 Grid.Column="8"
+                 Grid.Row="3"
+                 Grid.ColumnSpan="3"
+                 Margin="5"
+                 Text="{StaticResource _G_Local_040_Txt_Out_Games}" 
+                 Width="Auto"
+                 Visibility="Hidden"/>
+        <TextBox Style="{StaticResource _G_Style_Txt_Out}"
+                 Name="_040_Txt_Out_LegWin"
+                 Grid.Column="8"
+                 Grid.Row="4"
+                 Grid.ColumnSpan="3"
+                 Margin="5"
+                 Text="{StaticResource _G_Local_040_Txt_Out_LegsWin}" 
+                 Width="Auto"
+                 Visibility="Hidden"/>
+        <TextBox Style="{StaticResource _G_Style_Txt_Out}"
+                 Name="_040_Txt_Out_SetsWin"
+                 Grid.Column="8"
+                 Grid.Row="5"
+                 Grid.ColumnSpan="3"
+                 Margin="5"
+                 Text="{StaticResource _G_Local_040_Txt_Out_SetsWin}" 
+                 Width="Auto"
+                 Visibility="Hidden"/>
+        <TextBox Style="{StaticResource _G_Style_Txt_Out}"
+                 Name="_040_Txt_Out_Win"
+                 Grid.Column="8"
+                 Grid.Row="6"
+                 Grid.ColumnSpan="3"
+                 Margin="5"
+                 Text="{StaticResource _G_Local_040_Txt_Out_Win}" 
+                 Width="Auto"
+                 Visibility="Hidden"/>
+        <TextBox Style="{StaticResource _G_Style_Txt_Out}"
+                 Name="_040_Txt_Out_Loss"
+                 Grid.Column="8"
+                 Grid.Row="7"
+                 Grid.ColumnSpan="3"
+                 Margin="5"
+                 Text="{StaticResource _G_Local_040_Txt_Out_Loss}" 
+                 Width="Auto"
+                 Visibility="Hidden"/>
+        <TextBox Style="{StaticResource _G_Style_Txt_Out}"
+                 Name="_040_Txt_Out_Throws"
+                 Grid.Column="8"
+                 Grid.Row="8"
+                 Grid.ColumnSpan="3"
+                 Margin="5"
+                 Text="{StaticResource _G_Local_040_Txt_Out_Throws}" 
+                 Width="Auto"
+                 Visibility="Hidden"/>
+        <TextBox Style="{StaticResource _G_Style_Txt_Out}"
+                 Name="_040_Txt_Out_Points"
+                 Grid.Column="8"
+                 Grid.Row="9"
+                 Grid.ColumnSpan="3"
+                 Margin="5"
+                 Text="{StaticResource _G_Local_040_Txt_Out_Points}" 
+                 Width="Auto"
+                 Visibility="Hidden"/>
+        <TextBox Style="{StaticResource _G_Style_Txt_Out}"
+                 Name="_040_Txt_Out_AvgPoints"
+                 Grid.Column="8"
+                 Grid.Row="10"
+                 Grid.ColumnSpan="3"
+                 Margin="5"
+                 Text="{StaticResource _G_Local_040_Txt_Out_AvgPoints}" 
+                 Width="Auto"
+                 Visibility="Hidden"/>
+        <TextBox Style="{StaticResource _G_Style_Txt_Out}"
+                 Name="_040_Txt_Out_AvgPosition"
+                 Grid.Column="8"
+                 Grid.Row="11"
+                 Grid.ColumnSpan="3"
+                 Margin="5"
+                 Text="{StaticResource _G_Local_040_Txt_Out_AvgPosition}" 
+                 Width="Auto"
+                 Visibility="Hidden"/>
+        <!--#endregion-->
+        <!--#region text value output-->
+        <Button Style="{StaticResource _G_Style_Btn_Standard}"
+                Name="_040_Btn_Export_Player"
+                Content="{StaticResource _G_Local_040_Btn_DG_Export_Player}"
+                Grid.Row="2" 
+                Grid.Column="8"
+                Visibility="Hidden"
+                TabIndex="12" 
+                Click="_040_Btn_Export_Player_Click"/>
+        <TextBox Style="{StaticResource _G_Style_Txt_Out}"
+                 Name="_040_Txt_Out_Val_Player"
+                 Grid.Column="11"
+                 Grid.Row="2"
+                 Grid.ColumnSpan="4" 
+                 Margin="5" 
+                 Width="Auto"
+                 Visibility="Hidden"/>
+        <TextBox Style="{StaticResource _G_Style_Txt_Out}"
+                 Name="_040_Txt_Out_Val_Games"
+                 Grid.Column="11"
+                 Grid.Row="3"
+                 Grid.ColumnSpan="4" 
+                 Margin="5" 
+                 Width="Auto"
+                 Visibility="Hidden"/>
+        <TextBox Style="{StaticResource _G_Style_Txt_Out}"
+                 Name="_040_Txt_Out_Val_LegsWin"
+                 Grid.Column="11"
+                 Grid.Row="4"
+                 Grid.ColumnSpan="4" 
+                 Margin="5" 
+                 Width="Auto"
+                 Visibility="Hidden"/>
+        <TextBox Style="{StaticResource _G_Style_Txt_Out}"
+                 Name="_040_Txt_Out_Val_SetsWin"
+                 Grid.Column="11"
+                 Grid.Row="5"
+                 Grid.ColumnSpan="4" 
+                 Margin="5" 
+                 Width="Auto"
+                 Visibility="Hidden"/>
+        <TextBox Style="{StaticResource _G_Style_Txt_Out}"
+                 Name="_040_Txt_Out_Val_Win"
+                 Grid.Column="11"
+                 Grid.Row="6"
+                 Grid.ColumnSpan="4" 
+                 Margin="5" 
+                 Width="Auto"
+                 Visibility="Hidden"/>
+        <TextBox Style="{StaticResource _G_Style_Txt_Out}"
+                 Name="_040_Txt_Out_Val_Loss"
+                 Grid.Column="11"
+                 Grid.Row="7"
+                 Grid.ColumnSpan="4" 
+                 Margin="5" 
+                 Width="Auto"
+                 Visibility="Hidden"/>
+        <TextBox Style="{StaticResource _G_Style_Txt_Out}"
+                 Name="_040_Txt_Out_Val_Throw"
+                 Grid.Column="11"
+                 Grid.Row="8"
+                 Grid.ColumnSpan="4" 
+                 Margin="5" 
+                 Width="Auto"
+                 Visibility="Hidden"/>
+        <TextBox Style="{StaticResource _G_Style_Txt_Out}"
+                 Name="_040_Txt_Out_Val_Points"
+                 Grid.Column="11"
+                 Grid.Row="9"
+                 Grid.ColumnSpan="4" 
+                 Margin="5" 
+                 Width="Auto"
+                 Visibility="Hidden"/>
+        <TextBox Style="{StaticResource _G_Style_Txt_Out}"
+                 Name="_040_Txt_Out_Val_AvgPoints"
+                 Grid.Column="11"
+                 Grid.Row="10"
+                 Grid.ColumnSpan="4" 
+                 Margin="5" 
+                 Width="Auto"
+                 Visibility="Hidden"/>
+        <TextBox Style="{StaticResource _G_Style_Txt_Out}"
+                 Name="_040_Txt_Out_Val_AvgPosition"
+                 Grid.Column="11"
+                 Grid.Row="11"
+                 Grid.ColumnSpan="4" 
+                 Margin="5" 
+                 Width="Auto"
+                 Visibility="Hidden"/>
+        <!--#endregion-->
+        <!--#endregion-->
+        <!--#region datagrid-->
+        <Button Style="{StaticResource _G_Style_Btn_Standard}"
+                Name="_040_Btn_Export_Game"
+                Content="{StaticResource _G_Local_040_Btn_DG_Export_Game}"
+                Grid.Row="2" 
+                Grid.Column="8"
+                Visibility="Hidden"
+                TabIndex="12" 
+                Click="_040_Btn_Export_Game_Click"/>
+        <TextBox Style="{StaticResource _G_Style_Txt_Out}"
+                 Name="_040_Txt_Out_Val_DG_Game"
+                 Grid.Column="11"
+                 Grid.Row="2"
+                 Grid.ColumnSpan="6" 
+                 Margin="5" 
+                 Width="Auto"
+                 Visibility="Hidden"/>
+
+        <Button Style="{StaticResource _G_Style_Btn_TopMenu}"
+                Name="_040_Btn_DG_Player"
+                Content="{StaticResource _G_Local_040_Btn_DG_Player}"
+                Grid.Row="5"
+                Grid.Column="8"
+                TabIndex="10"
+                 Visibility="Hidden" Click="_040_Btn_DG_Player_Click"/>
+        <Button Style="{StaticResource _G_Style_Btn_TopMenu}"
+                Name="_040_Btn_DG_Legs"
+                Content="{StaticResource _G_Local_040_Btn_DG_Legs}"
+                Grid.Row="5"
+                Grid.Column="10"
+                TabIndex="11"
+                 Visibility="Hidden" Click="_040_Btn_DG_Legs_Click"/>
+        <Button Style="{StaticResource _G_Style_Btn_TopMenu}"
+                Name="_040_Btn_DG_GameStatistic"
+                Content="{StaticResource _G_Local_040_Btn_DG_GameStatistic}"
+                Grid.Row="5"
+                Grid.Column="12"
+                TabIndex="12"
+                 Visibility="Hidden" Click="_040_Btn_DG_GameStatistic_Click"/>
+
+        <DataGrid Name="_040_DG_GameStatistic_Player"
+                  IsReadOnly="True"
+                  Grid.ColumnSpan="9" 
+                  Grid.Column="8" 
+                  HorizontalAlignment="Left" 
+                  Height="290" 
+                  Margin="5" 
+                  Grid.Row="6" 
+                  Grid.RowSpan="6"
+                  Width="445"
+                  AutoGenerateColumns="False" 
+                  BorderThickness="2"
+                  VerticalAlignment="Top"
+                  Visibility="Hidden">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Player index" Binding="{Binding Index}" CanUserReorder="False" CanUserResize="true"/>
+                <DataGridTextColumn Header="Player name" Binding="{Binding PlayerName}" CanUserReorder="False" CanUserResize="true"/>
+                <DataGridTextColumn Header="First name" Binding="{Binding FirstName}" CanUserReorder="False" CanUserResize="true"/>
+                <DataGridTextColumn Header="Last name" Binding="{Binding LastName}" CanUserReorder="False" CanUserResize="true"/>
+                <DataGridTextColumn Header="Country" Binding="{Binding Country}" CanUserReorder="False" CanUserResize="true"/>
+                <DataGridTextColumn Header="Birth day" Binding="{Binding BirthDay}" CanUserReorder="False" CanUserResize="true"/>
+
+            </DataGrid.Columns>
+        </DataGrid>
+        <DataGrid Name="_040_DG_GameStatistic_Legs"
+                  IsReadOnly="True"
+                  Grid.ColumnSpan="9" 
+                  Grid.Column="8" 
+                  HorizontalAlignment="Left" 
+                  Height="290" 
+                  Margin="5" 
+                  Grid.Row="6" 
+                  Grid.RowSpan="6"
+                  Width="445"
+                  AutoGenerateColumns="False" 
+                  BorderThickness="2"
+                  VerticalAlignment="Top"
+                  Visibility="Hidden">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Player index" Binding="{Binding CountPlayerIndex}" CanUserReorder="False" CanUserResize="true"/>
+                <DataGridTextColumn Header="Player name" Binding="{Binding PlayerName}" CanUserReorder="False" CanUserResize="true"/>
+                <DataGridTextColumn Header="Date" Binding="{Binding DateTime}" CanUserReorder="False" CanUserResize="true"/>
+                <DataGridTextColumn Header="Finish score" Binding="{Binding CountFinishScore}" CanUserReorder="False" CanUserResize="true"/>
+                <DataGridTextColumn Header="Winner throws" Binding="{Binding CountLegWinnerThrows}" CanUserReorder="False" CanUserResize="true"/>
+            </DataGrid.Columns>
+        </DataGrid>
+        <DataGrid Name="_040_DG_GameStatistic"
+                  IsReadOnly="True"
+                  Grid.ColumnSpan="9" 
+                  Grid.Column="8" 
+                  HorizontalAlignment="Left" 
+                  Height="290" 
+                  Margin="5" 
+                  Grid.Row="6" 
+                  Grid.RowSpan="6"
+                  Width="445"
+                  AutoGenerateColumns="False" 
+                  BorderThickness="2"
+                  VerticalAlignment="Top"
+                  Visibility="Hidden">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Index throw" Binding="{Binding CountIndexThrow}" CanUserReorder="False" CanUserResize="true"/>
+                <DataGridTextColumn Header="Player index" Binding="{Binding CountIndexPlayer}" CanUserReorder="False" CanUserResize="true"/>
+                <DataGridTextColumn Header="Player name" Binding="{Binding PlayerName}" CanUserReorder="False" CanUserResize="true"/>
+                <DataGridTextColumn Header="Rounds" Binding="{Binding CountRounds}" CanUserReorder="False" CanUserResize="true"/>
+                <DataGridTextColumn Header="Score" Binding="{Binding CountScore}" CanUserReorder="False" CanUserResize="true"/>
+                <DataGridTextColumn Header="Overthrown?" Binding="{Binding IsScoreOverthrown}" CanUserReorder="False" CanUserResize="true"/>
+                <DataGridTextColumn Header="Finish" Binding="{Binding CountFinish}" CanUserReorder="False" CanUserResize="true"/>
+                <DataGridTextColumn Header="Finish possible?" Binding="{Binding IsFinishPossible}" CanUserReorder="False" CanUserResize="true"/>
+                <DataGridTextColumn Header="Date" Binding="{Binding CountDateTime}" CanUserReorder="False" CanUserResize="true"/>
+            </DataGrid.Columns>
+        </DataGrid>
+        <!--#endregion-->
+        
+        <!-- ListBox -->
+        <!--#region Buttons-->
+        <Button Style="{StaticResource _G_Style_Btn_TopMenu}"
+                Name="_040_Btn_Player"
+                Content="{StaticResource _G_Local_040_Btn_Player}"
+                Grid.Row="2"
+                Grid.Column="1"
+                TabIndex="1" Margin="4.6,25.2,0,0" VerticalAlignment="Top" Click="_040_Btn_Player_Click"/>
+        <Button Style="{StaticResource _G_Style_Btn_TopMenu}"
+                Name="_040_Btn_Games"
+                Content="{StaticResource _G_Local_040_Btn_Games}"
+                Grid.Row="2"
+                Grid.Column="3"
+                TabIndex="2" Click="_040_Btn_Games_Click"/>
+        <Button Style="{StaticResource _G_Style_Btn_TopMenu}"
+                Name="_040_Btn_Graphs"
+                Content="{StaticResource _G_Local_040_Btn_Graphs}"
+                Grid.Row="2"
+                Grid.Column="5"
+                TabIndex="3" Click="_040_Btn_Graphs_Click"/>
+        <!--#endregion-->
+        <ListBox Style="{StaticResource _G_Style_ListBox}"
+                 Name="_040_ListBox"
+                 Grid.Column="1" 
+                 Grid.Row="3" 
+                 SelectionChanged="_040_ListBox_Player_SelectionChanged" 
+                 SelectionMode="Single" 
+                 Grid.ColumnSpan="6" 
+                 Margin="5"
+                 Grid.RowSpan="9" Width="288"/>
+    </Grid>
+</Window>

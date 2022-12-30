@@ -1,0 +1,206 @@
+﻿<Window x:Class="DDD_WPF.Screens._02X_Game._020_Game_NewGame"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:DDD_WPF.Screens._02X_Game"
+        mc:Ignorable="d"
+        Style="{StaticResource _G_Style_Scr_Main}"
+        WindowStartupLocation="CenterScreen"
+        Title="_020_Game_NewGame">
+
+    <Grid HorizontalAlignment="left" VerticalAlignment="top">
+        <!-- ********** Grid definition ********** -->
+        <Grid.RowDefinitions>
+            <RowDefinition MinHeight="50" Height="*"/>
+            <RowDefinition MinHeight="50" Height="*"/>
+            <RowDefinition MinHeight="50" Height="*"/>
+            <RowDefinition MinHeight="50" Height="*"/>
+            <RowDefinition MinHeight="50" Height="*"/>
+            <RowDefinition MinHeight="50" Height="*"/>
+            <RowDefinition MinHeight="50" Height="*"/>
+            <RowDefinition MinHeight="50" Height="*"/>
+            <RowDefinition MinHeight="50" Height="*"/>
+            <RowDefinition MinHeight="50" Height="*"/>
+            <RowDefinition MinHeight="50" Height="*"/>
+            <RowDefinition MinHeight="50" Height="*"/>
+            <RowDefinition MinHeight="50" Height="*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition MinWidth="50" Width="*"/>
+            <ColumnDefinition MinWidth="50" Width="*"/>
+            <ColumnDefinition MinWidth="50" Width="*"/>
+            <ColumnDefinition MinWidth="50" Width="*"/>
+            <ColumnDefinition MinWidth="50" Width="*"/>
+            <ColumnDefinition MinWidth="50" Width="*"/>
+            <ColumnDefinition MinWidth="50" Width="*"/>
+            <ColumnDefinition MinWidth="50" Width="*"/>
+            <ColumnDefinition MinWidth="50" Width="*"/>
+            <ColumnDefinition MinWidth="50" Width="*"/>
+            <ColumnDefinition MinWidth="50" Width="*"/>
+            <ColumnDefinition MinWidth="50" Width="*"/>
+            <ColumnDefinition MinWidth="50" Width="*"/>
+            <ColumnDefinition MinWidth="50" Width="*"/>
+            <ColumnDefinition MinWidth="50" Width="*"/>
+            <ColumnDefinition MinWidth="50" Width="*"/>
+            <ColumnDefinition MinWidth="50" Width="*"/>
+            <ColumnDefinition MinWidth="50" Width="*"/>
+        </Grid.ColumnDefinitions>
+
+        <!-- ********** Top menu ********** -->
+        <Button Style="{StaticResource _G_Style_Btn_TopMenu}"
+                Name="_020_Btn_Menu_NewGame"
+                Content="{StaticResource _G_Local_TopMenu_Btn_NewGame}" 
+                Grid.Row="0" 
+                Grid.Column="1"
+                IsEnabled="false"/>
+        <Button Style="{StaticResource _G_Style_Btn_TopMenu}"
+                Name="_020_Btn_Menu_Home"
+                Content="{StaticResource _G_Local_TopMenu_Btn_Home}" 
+                Grid.Row="0" 
+                Grid.Column="3" 
+                Click="_020_Btn_Menu_Home_Click"/>
+        <Button Style="{StaticResource _G_Style_Btn_TopMenu}"
+                Name="_020_Btn_Menu_Statistic"
+                Content="{StaticResource _G_Local_TopMenu_Btn_Statistic}" 
+                Grid.Row="0" 
+                Grid.Column="5" Click="_020_Btn_Menu_Statistic_Click"/>
+        <Button Style="{StaticResource _G_Style_Btn_TopMenu}"
+                Name="_020_Btn_Menu_Player"
+                Content="{StaticResource _G_Local_TopMenu_Btn_Player}" 
+                Grid.Row="0" 
+                Grid.Column="7" 
+                Click="_020_Btn_Menu_Player_Click"/>
+        <Button Style="{StaticResource _G_Style_Btn_TopMenu}"
+                Name="_020_Btn_Menu_Exit"
+                Content="{StaticResource _G_Local_TopMenu_Btn_Exit}" 
+                Grid.Row="0" 
+                Grid.Column="15" 
+                Click="_020_Btn_Menu_Exit_Click"/>
+
+        <!-- ********** Screen layout **********-->
+        <!-- Text output -->
+        <TextBox Style="{StaticResource _G_Style_Txt_Out}"
+                 Name="_020_Txt_Out_GameMode"
+                 Grid.Column="1"
+                 Grid.Row="3"
+                 Grid.ColumnSpan="3" 
+                 Margin="5" 
+                 Width="Auto"
+                 Text="{StaticResource _G_Local_020_Txt_Out_GameMode}"/>
+        <TextBox Style="{StaticResource _G_Style_Txt_Out}"
+                 Name="_020_Txt_Out_Points"
+                 Grid.Column="1"
+                 Grid.Row="4"
+                 Grid.ColumnSpan="3" 
+                 Margin="5" 
+                 Width="Auto"
+                 Text="{StaticResource _G_Local_020_Txt_Out_Points}"/>
+        <TextBox Style="{StaticResource _G_Style_Txt_Out}"
+            x:Name="_020_Txt_Out_Sets"
+            Grid.Column="1"
+            Grid.Row="5"
+            Grid.ColumnSpan="3" 
+            Margin="5" 
+            Width="Auto"
+            Text="{StaticResource _G_Local_020_Txt_Out_Sets}"/>
+        <TextBox Style="{StaticResource _G_Style_Txt_Out}"
+            x:Name="_020_Txt_Out_Legs"
+            Grid.Column="1"
+            Grid.Row="6"
+            Grid.ColumnSpan="3" 
+            Margin="5" 
+            Width="Auto"
+            Text="{StaticResource _G_Local_020_Txt_Out_Legs}"/>
+        <TextBox Style="{StaticResource _G_Style_Txt_Out}"
+                 Name="_020_Txt_Out_BotDifficult"
+                 Grid.Column="1"
+                 Grid.Row="7"
+                 Grid.ColumnSpan="3" 
+                 Margin="5" 
+                 Width="Auto"
+                 Text="{StaticResource _G_Local_020_Txt_Out_KIDifficulty}"/>
+        
+        <TextBox Style="{StaticResource _G_Style_Txt_Out}"
+                 Name="_020_Txt_Out_Val_GameMode"
+                 Grid.Column="4"
+                 Grid.Row="3"
+                 Grid.ColumnSpan="3" 
+                 Margin="5" 
+                 Width="Auto"/>
+        <TextBox Style="{StaticResource _G_Style_Txt_Out}"
+                 Name="_020_Txt_Out_Val_Points"
+                 Grid.Column="4"
+                 Grid.Row="4"
+                 Grid.ColumnSpan="3" 
+                 Margin="5" 
+                 Width="Auto"/>
+        <TextBox Style="{StaticResource _G_Style_Txt_Out}"
+            x:Name="_020_Txt_Out_Val_Sets"
+            Grid.Column="4"
+            Grid.Row="5"
+            Grid.ColumnSpan="3" 
+            Margin="5" 
+            Width="Auto"/>
+        <TextBox Style="{StaticResource _G_Style_Txt_Out}"
+            x:Name="_020_Txt_Out_Val_Legs"
+            Grid.Column="4"
+            Grid.Row="6"
+            Grid.ColumnSpan="3" 
+            Margin="5" 
+            Width="Auto"/>
+        <TextBox Style="{StaticResource _G_Style_Txt_Out}"
+                 Name="_020_Txt_Out_Val_BotDifficult"
+                 Grid.Column="4"
+                 Grid.Row="7"
+                 Grid.ColumnSpan="3" 
+                 Margin="5" 
+                 Width="Auto"/>
+        
+        <!-- Buttons -->
+        <Button Style="{StaticResource _G_Style_Btn_Standard}"
+                Name="_020_Btn_NewGame"
+                Content="{StaticResource _G_Local_020_Txt_Out_NewGame}"
+                Grid.Row="11" 
+                Grid.Column="1"
+                TabIndex="10" 
+                Margin="5" 
+                Width="190" Click="_020_Btn_NewGame_Click"/>
+
+        <!-- ListBox -->
+        <ListBox Style="{StaticResource _G_Style_ListBox}"
+                 Name="_020_ListBox_Player"
+                 Grid.Column="10" 
+                 Grid.Row="3" 
+                 SelectionMode="Multiple">
+        </ListBox>
+
+        <!-- Slider -->
+        <Slider Style="{StaticResource _G_Style_Sli_Third}"
+                Name="_020_Sli_GameMode"
+                Grid.Column="7"
+                Grid.Row="3" 
+                ValueChanged="_020_Sli_GameMode_ValueChanged"/>
+        <Slider Style="{StaticResource _G_Style_Sli_Third}"
+                Name="_020_Sli_Points"
+                Grid.Column="7"
+                Grid.Row="4" 
+                ValueChanged="_020_Sli_Points_ValueChanged"/>
+        <Slider Style="{StaticResource _G_Style_Sli_Third}"
+                x:Name="_020_Sli_Sets"
+                Grid.Column="7"
+                Grid.Row="5"
+                ValueChanged="_020_Sli_Sets_ValueChanged"/>
+        <Slider Style="{StaticResource _G_Style_Sli_Third}"
+                x:Name="_020_Sli_Legs"
+                Grid.Column="7"
+                Grid.Row="6"
+                ValueChanged="_020_Sli_Legs_ValueChanged" 
+            />
+        <Slider Style="{StaticResource _G_Style_Sli_Third}"
+                Name="_020_Sli_BotDifficult"
+                Grid.Column="7"
+                Grid.Row="7" 
+                ValueChanged="_020_Sli_BotDifficult_ValueChanged"/>
+    </Grid>
+</Window>
