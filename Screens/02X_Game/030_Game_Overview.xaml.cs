@@ -112,10 +112,6 @@ namespace DDD_WPF.Screens._02X_Game
                 _030_Txt_In_Points.Text = Game.DisplayProperties.ActPlayer.Score.ToString();
                 _030_Txt_Out_Points.Text = Game.DisplayProperties.ActPlayer.Finish.ToString();
 
-                //_030_Txt_Out_Val_NextPlayer.Text = Game.DisplayProperties.NextPlayer.Name;
-                //_030_Txt_Out_Val_Score.Text = Game.DisplayProperties.NextPlayer.Score.ToString();
-                //_030_Txt_Out_Val_ToThrow.Text = Game.DisplayProperties.NextPlayer.Finish.ToString();
-
                 _030_Txt_Out_Val_Sets.Text = Game.DisplayProperties.HighScore.ActSet;
                 _030_Txt_Out_Val_Legs.Text = Game.DisplayProperties.HighScore.HighestLegs;
 
@@ -202,20 +198,6 @@ namespace DDD_WPF.Screens._02X_Game
                 #endregion
                 #region sequence
 
-                if (!CheckFirstThrowExecution && DDD.Game.MainProperties.BotCheck)
-                    if (DatahandlingPlayer.GetIndexFromPlayerName(_030_ListBox_Player.Items[0].ToString()) == 0)
-                    {
-                        delBotSeq hdlBotSeq = new delBotSeq(BotSequence);
-                        Dispatcher.Invoke(hdlBotSeq);
-                        return;
-                    }
-                if (CheckFirstThrowExecution && DDD.Game.MainProperties.BotCheck)
-                    if (DatahandlingPlayer.GetIndexFromPlayerName(_030_ListBox_Player.SelectedItem.ToString()) == 0)
-                    {
-                        delBotSeq hdlBotSeq = new delBotSeq(BotSequence);
-                        Dispatcher.Invoke(hdlBotSeq);
-                        return;
-                    }
 
                 sqGame.EventHandlerGameEnd += SqGame_EventHandlerGameEnd;
                 if (!CheckFirstThrowExecution)
@@ -239,6 +221,20 @@ namespace DDD_WPF.Screens._02X_Game
 
                     _030_ListBox_Player.SelectedIndex = Game.DisplayProperties.ListBoxActPlayer;
                 }
+                if (!CheckFirstThrowExecution && DDD.Game.MainProperties.BotCheck)
+                    if (DatahandlingPlayer.GetIndexFromPlayerName(_030_ListBox_Player.Items[0].ToString()) == 0)
+                    {
+                        delBotSeq hdlBotSeq = new delBotSeq(BotSequence);
+                        Dispatcher.Invoke(hdlBotSeq);
+                        return;
+                    }
+                if (CheckFirstThrowExecution && DDD.Game.MainProperties.BotCheck)
+                    if (DatahandlingPlayer.GetIndexFromPlayerName(_030_ListBox_Player.SelectedItem.ToString()) == 0)
+                    {
+                        delBotSeq hdlBotSeq = new delBotSeq(BotSequence);
+                        Dispatcher.Invoke(hdlBotSeq);
+                        return;
+                    }
                 #endregion
             }
             if (e.Key == Key.Back)

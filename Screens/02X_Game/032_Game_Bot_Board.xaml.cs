@@ -2,6 +2,8 @@
 
 using System;
 using System.ComponentModel;
+using System.Threading;
+using System.Threading.Tasks;
 using System.Timers;
 using System.Windows;
 using System.Windows.Controls;
@@ -43,6 +45,7 @@ namespace DDD_WPF.Screens._02X_Game
         private DartBot.Scoring Scores;
         private DatahandlingWPF.Win32Point[] ScoreCoordinates = new DatahandlingWPF.Win32Point[3];
         private static int CountMaxThrow = new int();
+        private static BoardParameter.ScreenCoordinates sc = new BoardParameter.ScreenCoordinates();
 
         private bool _IsBotEnabled;
         public bool IsBotEnabled
@@ -50,8 +53,6 @@ namespace DDD_WPF.Screens._02X_Game
             get { return _IsBotEnabled; }
             set { _IsBotEnabled = value;}
         }
-
-
 
 #if debug
         private static string Debug = "X=%1;Y=%2;Quadrant=%3;Degrees=%4;Length=%5" + Environment.NewLine +
@@ -61,7 +62,7 @@ namespace DDD_WPF.Screens._02X_Game
         #endregion
         #region timer
         private int TimerThrowDelayInMs = 1500;
-        private static Timer timer;
+        private static System.Timers.Timer timer;
         private void OnTimedEvent(object sender, ElapsedEventArgs e)
         {
             if (!IsBotEnabled)
@@ -75,19 +76,19 @@ namespace DDD_WPF.Screens._02X_Game
                     Win32Point = ScoreCoordinates[CountThrow];
                     if (CountThrow == 0)
                     {
-                        delDrawPoint hndlDrawPoint = new delDrawPoint(DrawPoint);
+                        delDrawPoint hndlDrawPoint = new delDrawPoint(GetCoordinates);
                         Dispatcher.Invoke(hndlDrawPoint, Win32Point);
                         Dispatcher.ExitAllFrames();
                     }
                     else if (CountThrow == 1)
                     {
-                        delDrawPoint hndlDrawPoint = new delDrawPoint(DrawPoint);
+                        delDrawPoint hndlDrawPoint = new delDrawPoint(GetCoordinates);
                         Dispatcher.Invoke(hndlDrawPoint, Win32Point);
                         Dispatcher.ExitAllFrames();
                     }
                     else if (CountThrow == 2)
                     {
-                        delDrawPoint hndlDrawPoint = new delDrawPoint(DrawPoint);
+                        delDrawPoint hndlDrawPoint = new delDrawPoint(GetCoordinates);
                         Dispatcher.Invoke(hndlDrawPoint, Win32Point);
                         Dispatcher.ExitAllFrames();
                     }
@@ -114,6 +115,57 @@ namespace DDD_WPF.Screens._02X_Game
                 Dispatcher.Invoke(hdlAction);
             }
         }
+        //private void TimerScale_Elapsed(object sender, ElapsedEventArgs e)
+        //{
+        //    timerScale.Enabled = false;
+
+        //    Line line01 = new Line();
+        //    line01.Stroke = System.Windows.Media.Brushes.Gold;
+        //    line01.X1 = sc.X - 5 * scale;
+        //    line01.X2 = sc.X + 5 * scale;
+        //    line01.Y1 = sc.Y * scale;
+        //    line01.Y2 = sc.Y * scale;
+        //    line01.StrokeThickness = 3 * scale;
+        //    Line line02 = new Line();
+        //    line02.Stroke = System.Windows.Media.Brushes.Gold;
+        //    line02.X1 = sc.X * scale;
+        //    line02.X2 = sc.X * scale;
+        //    line02.Y1 = sc.Y - 5 * scale;
+        //    line02.Y2 = sc.Y + 5 * scale;
+        //    line02.StrokeThickness = 3 * scale;
+
+        //    Line line03 = new Line();
+        //    line03.Stroke = System.Windows.Media.Brushes.DarkRed;
+        //    line03.X1 = sc.X - 2 * scale;
+        //    line03.X2 = sc.X + 2 * scale;
+        //    line03.Y1 = sc.Y * scale;
+        //    line03.Y2 = sc.Y * scale;
+        //    line03.StrokeThickness = 2 * scale;
+        //    Line line04 = new Line();
+        //    line04.Stroke = System.Windows.Media.Brushes.DarkRed;
+        //    line04.X1 = sc.X * scale;
+        //    line04.X2 = sc.X * scale;
+        //    line04.Y1 = sc.Y - 2 * scale;
+        //    line04.Y2 = sc.Y + 2 * scale;
+        //    line04.StrokeThickness = 2 * scale;
+
+        //    DartBoard_Canvas.Children.Add(line01);
+        //    DartBoard_Canvas.Children.Add(line02);
+        //    DartBoard_Canvas.Children.Add(line03);
+        //    DartBoard_Canvas.Children.Add(line04);
+
+        //    scale -= 1;
+
+        //    if(scale == 1)
+        //    {
+        //        timerScale.Enabled = false;
+        //        scale = 50;
+        //    }
+        //    else
+        //    {
+        //        timerScale.Enabled = true;
+        //    }
+        //}
         #endregion
         #region methods
         private void FirstExecute()
@@ -145,51 +197,19 @@ namespace DDD_WPF.Screens._02X_Game
         }
         private void SetTimer()
         {
-            timer = new Timer(TimerThrowDelayInMs);
+            timer = new System.Timers.Timer(TimerThrowDelayInMs);
             timer.Elapsed += OnTimedEvent;
             timer.AutoReset = true;
             timer.Enabled = true;
         }
-        private void DrawPoint(DatahandlingWPF.Win32Point screenCoordinates)
+
+        private void GetCoordinates(DatahandlingWPF.Win32Point screenCoordinates)
         {
             try
             {
-                BoardParameter.ScreenCoordinates screenCoordinatesOrigin = BoardParameter.GetOrigin(screenCoordinates.X, screenCoordinates.Y);
+                sc = BoardParameter.GetOrigin(screenCoordinates.X, screenCoordinates.Y);
 
-                Line line01 = new Line();
-                line01.Stroke = System.Windows.Media.Brushes.Gold;
-                line01.X1 = screenCoordinatesOrigin.X - 5;
-                line01.X2 = screenCoordinatesOrigin.X + 5;
-                line01.Y1 = screenCoordinatesOrigin.Y;
-                line01.Y2 = screenCoordinatesOrigin.Y;
-                line01.StrokeThickness = 3;
-                Line line02 = new Line();
-                line02.Stroke = System.Windows.Media.Brushes.Gold;
-                line02.X1 = screenCoordinatesOrigin.X;
-                line02.X2 = screenCoordinatesOrigin.X;
-                line02.Y1 = screenCoordinatesOrigin.Y - 5;
-                line02.Y2 = screenCoordinatesOrigin.Y + 5;
-                line02.StrokeThickness = 3;
-
-                Line line03 = new Line();
-                line03.Stroke = System.Windows.Media.Brushes.DarkRed;
-                line03.X1 = screenCoordinatesOrigin.X - 2;
-                line03.X2 = screenCoordinatesOrigin.X + 2;
-                line03.Y1 = screenCoordinatesOrigin.Y;
-                line03.Y2 = screenCoordinatesOrigin.Y;
-                line03.StrokeThickness = 2;
-                Line line04 = new Line();
-                line04.Stroke = System.Windows.Media.Brushes.DarkRed;
-                line04.X1 = screenCoordinatesOrigin.X;
-                line04.X2 = screenCoordinatesOrigin.X;
-                line04.Y1 = screenCoordinatesOrigin.Y - 2;
-                line04.Y2 = screenCoordinatesOrigin.Y + 2;
-                line04.StrokeThickness = 2;
-
-                DartBoard_Canvas.Children.Add(line01);
-                DartBoard_Canvas.Children.Add(line02);
-                DartBoard_Canvas.Children.Add(line03);
-                DartBoard_Canvas.Children.Add(line04);
+                DrawPoints();
 
                 RefreshValues(CountThrow);
             }
@@ -200,6 +220,43 @@ namespace DDD_WPF.Screens._02X_Game
                 Console.WriteLine("Error = {0}", e.StackTrace);
                 throw;
             }
+        }
+        private void DrawPoints()
+        {
+                Line line01 = new Line();
+                line01.Stroke = System.Windows.Media.Brushes.Gold;
+                line01.X1 = sc.X - 5;
+                line01.X2 = sc.X + 5;
+                line01.Y1 = sc.Y;
+                line01.Y2 = sc.Y;
+                line01.StrokeThickness = 3;
+                Line line02 = new Line();
+                line02.Stroke = System.Windows.Media.Brushes.Gold;
+                line02.X1 = sc.X;
+                line02.X2 = sc.X;
+                line02.Y1 = sc.Y - 5;
+                line02.Y2 = sc.Y + 5;
+                line02.StrokeThickness = 3;
+
+                Line line03 = new Line();
+                line03.Stroke = System.Windows.Media.Brushes.DarkRed;
+                line03.X1 = sc.X - 2;
+                line03.X2 = sc.X + 2;
+                line03.Y1 = sc.Y;
+                line03.Y2 = sc.Y;
+                line03.StrokeThickness = 2;
+                Line line04 = new Line();
+                line04.Stroke = System.Windows.Media.Brushes.DarkRed;
+                line04.X1 = sc.X;
+                line04.X2 = sc.X;
+                line04.Y1 = sc.Y - 2;
+                line04.Y2 = sc.Y + 2;
+                line04.StrokeThickness = 2;
+
+                DartBoard_Canvas.Children.Add(line01);
+                DartBoard_Canvas.Children.Add(line02);
+                DartBoard_Canvas.Children.Add(line03);
+                DartBoard_Canvas.Children.Add(line04);
         }
         private BoardParameter.ScreenResolution GetScreenResolution()
         {

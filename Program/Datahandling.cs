@@ -225,6 +225,7 @@ namespace DDD
         }
         public virtual bool CheckFileInitialized()
         {
+
             FileInfo fileInfo = new FileInfo(DataPath);
             if (!Directory.Exists(DataPath))
                 if (fileInfo.Exists)
@@ -3932,7 +3933,7 @@ namespace DDD
                         }
                         #endregion
                         #endregion
-                        #region Set Avg/Throws/Highest score
+                        #region Set Avg/Throws/Highest score/ WinLoss
                         for (int i = 0; i < plEndRanking.Length; i++)
                         {
                             // declare 
@@ -3963,8 +3964,16 @@ namespace DDD
                             }
                             else
                                 plEndRanking[i].HighestPoints = 0;
-
-
+                            // WinLoss
+                            for (int j = 0; j < pds.Count; j++)
+                            {
+                                var plDhps = new DatahandlingPlayerStat(DDD.Configuration.FilePathDDDS3D);
+                                var plStat = plDhps.GetPlayerStatistic(plEndRanking[idx].Index);
+                                if (plStat.TotalLoss == 0)
+                                    plEndRanking[idx].WinLoss = plStat.TotalWin / 1;
+                                else
+                                    plEndRanking[idx].WinLoss = plStat.TotalWin / plStat.TotalLoss;
+                            }
                         }
 
                         #endregion
@@ -4490,7 +4499,7 @@ namespace DDD
                 public string Name;
                 public double Avg;
                 public int Throws;
-                public int WinLoss;
+                public double WinLoss;
                 public int HighestPoints;
                 public int SetsWin;
                 public int LegsWin;
@@ -6794,7 +6803,7 @@ namespace DDD
         /// <returns>Integer random number</returns>
         public static int RandomInt(int Min, int Max)
         {
-            if (Max < Min)
+            if (Max <= Min)
                 return 0;
             return Random.Next(Min, Max + 1);
         }
@@ -6953,6 +6962,7 @@ namespace DDD
         public DatahandlingWPF.Win32Point GetRandomCoordinatesFromScore(int score, ValueMultiplicator valueMultiplicator)
         {
 #if DEBUG
+            //Score 39
             double debug_scoreDegreeRandom = 0, debug_scoreRadiusRandom = 0;
 #endif
             var win32Point = new DatahandlingWPF.Win32Point();
@@ -6978,7 +6988,7 @@ namespace DDD
 
                 if (score == 0)
                 {
-                    int degrees = RandomInt(0, 359);
+                    int degrees = RandomInt(0, 360);
                     int radius = RandomInt(224,300);
                     win32Point.X = (int)(Math.Sin((degrees * Math.PI) / 180) * radius);
                     win32Point.Y = (int)(Math.Cos((degrees * Math.PI) / 180) * radius);
@@ -7022,8 +7032,8 @@ namespace DDD
                 Console.WriteLine("Error = {0}", e.Message);
                 Console.WriteLine("Error = {0}", e.StackTrace);
 #if DEBUG
-                Console.WriteLine("ToDebug debugscoreDegreeRandom: {0}", debug_scoreDegreeRandom);
-                Console.WriteLine("ToDebug debugscoreDegreeRandom: {0}", debug_scoreDegreeRandom);
+                Console.WriteLine("ToDebug debug_scoreDegreeRandom: {0}", debug_scoreDegreeRandom);
+                Console.WriteLine("ToDebug debug_scoreRadiusRandom: {0}", debug_scoreRadiusRandom);
 #endif
                 Console.WriteLine("*********** Select confirm dartboard numbers ***********");
 

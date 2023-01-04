@@ -142,8 +142,6 @@
                  Grid.ColumnSpan="10" 
                  Grid.RowSpan="25" 
                  Margin="0" 
-                 Width="304" 
-                 Height="532" 
                  SelectionMode="Single" 
                  SelectionChanged="_030_ListBox_Player_SelectionChanged" GotFocus="_030_ListBox_Player_GotFocus" VerticalAlignment="Bottom" d:ItemsSource="{d:SampleData ItemCount=5}"/>
 
